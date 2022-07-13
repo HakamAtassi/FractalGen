@@ -10,6 +10,11 @@ namespace project{
 
 	class ZoomList{
 		private:
+
+			double xCenter{0};
+			double yCenter{0};
+			double scale{1};
+
 			int width=0;
 			int height=0;
 			std::vector<Zoom> zooms;

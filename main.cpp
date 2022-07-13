@@ -2,6 +2,7 @@
 #include "BitmapFileHeader.h"
 #include "BitmapInfoHeader.h"
 #include "Mandelbrot.h"
+#include "ZoomList.h"
 #include <memory>
 #include <math.h>
 
@@ -13,28 +14,30 @@ using namespace project;
 
 int main(){
 
-	static const int width=800;
+	static const int width=600;
 	static const int height =800;
 
 	Bitmap b(width,height);
-	b.setPixel(300, 400, 255, 255, 255);
 
 	double min=999999;
 	double max=-999999;
+
+	ZoomList zoomList(width,height);
+	zoomList.add(Zoom(width/2,height/2,4.0/width));
+	zoomList.add(Zoom(295,height-190,0.5));
 
 	unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0}); //iterations:number of pixels
 	unique_ptr<int[]> fractal(new int[width*height]{0}); //pixel:iterations
 
 
 
-	for(int x=0;x<width;x++){
-		for(int y=0;y<height;y++){
-			double xFractal=(x-width/2-200)*2.0/height; 		//centered coodinate (-300,300)
-			double yFractal=(y-height/2)*2.0/height; 	// ditto
+	for(int y=0;y<width;y++){
+		for(int x=0;x<height;x++){
+	
+			std::pair<double,double> coords=zoomList.doZoom(x,y);
 
 
-
-			int iterations=Mandelbrot::getIterations(xFractal, yFractal);
+			int iterations=Mandelbrot::getIterations(coords.first,coords.second);
 
 			fractal[y*width+x]=iterations; 		//store the number of iterations for each pixel;
 

@@ -7,8 +7,8 @@ namespace project{
 	struct Zoom{
 		int x{0};
 		int y{0};
-		double scale{0};
-		Zoom(int x, int y, int scale):x(x),y(y),scale(scale){};
+		double scale{1};
+		Zoom(int x, int y, double scale):x(x),y(y),scale(scale){};
 	};
 
 
