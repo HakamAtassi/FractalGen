@@ -16,14 +16,14 @@ using namespace std;
 
 namespace project {
 
-struct BitmapFileHeader{ 		//data that will be written to file
+	struct BitmapFileHeader{ 		//data that will be written to file
 
-	char header[2]{'B','M'};
-	int32_t fileSize;
-	int32_t reserved=0;
-	int32_t dataOffset;
+		char header[2]{'B','M'};
+		int32_t fileSize;
+		int32_t reserved=0;
+		int32_t dataOffset;
 
-};
+	};
 
 }
 
