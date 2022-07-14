@@ -20,7 +20,7 @@ main.o: main.cpp
 	g++ -c main.cpp
 
 clean: 
-	rm -f *o fractalGen
+	rm *.o fractalGen
 
 run: fractalGen
 	./fractalGen
