@@ -6,37 +6,52 @@
 #include "Mandelbrot.h"
 #include "Bitmap.h"
 #include "ZoomList.h"
+#include "RGB.h"
+
+
+#include <vector>
 
 namespace project{
 
-class FractalCreator{
+	class FractalCreator{
 
-private:
-	int width{0};
-	int height{0};
-	int total{0};
-
-	std::unique_ptr<int[]> histogram; //iterations:number of pixels
-	std::unique_ptr<int[]> fractal; //pixel:iterations
-	Bitmap bitmap;
-	ZoomList zoomList;
+		private:
+			int width{0};
+			int height{0};
+			int total{0};
 
 
-public:
+			std::unique_ptr<int[]> histogram; //iterations:number of pixels
+			std::unique_ptr<int[]> fractal; //pixel:iterations
+			Bitmap bitmap;
+			ZoomList zoomList;
 
-	FractalCreator(int width, int height); 		//size of image
-	virtual ~FractalCreator();
+			vector<int> ranges; //the actual ranges or "bins" (percentages of max it)
+			vector<RGB> colors;
+			vector<int> rangeTotals; 		//stores the number of pixes per range
 
+			bool gotFirstRange=false;
 
-	void calculateIterations(); //calculate the iterations of each pixel. Generate histograms
-	void getTotal();
-	void addZoom(const Zoom& zoom); 		//add zooms to zoom list and recenter
-	void drawFractal(); 	//place bitmaps
+		public:
+			FractalCreator(int width, int height); 		//size of image
+			virtual ~FractalCreator();
+			void addZoom(const Zoom& zoom); 		//add zooms to zoom list and recenter
+			void addRange(double rangeEnd, const RGB& rgb);
 
-	void writeBitmap(std::string); //generate .bmp file
+		private:
 
+			void calculateIterations(); //calculate the iterations of each pixel. Generate histograms
+			void getTotalIterations();
+			void drawFractal(); 	//place bitmaps
+			void getRangeTotals();
 
-};
+			void writeBitmap(std::string); //generate .bmp file
+			int getRange(int iterations) const; 		//not allowed to modify member vars
+
+		public:
+			int run(string name);
+
+	};
 
 }
 

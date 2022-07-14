@@ -31,7 +31,7 @@ namespace project{
 	std::pair<double,double> ZoomList::doZoom(int x, int y){
 
 		double xFractal = (x-width/2)*scale+xCenter;
-		double yFractal = (y-height/2)*scale+yCenter;
+		double yFractal = -(y-height/2)*scale+yCenter;
 
 		//std::cout<<scale<<", ";
 
