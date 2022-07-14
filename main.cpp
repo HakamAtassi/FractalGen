@@ -5,7 +5,7 @@
 #include "ZoomList.h"
 #include <memory>
 #include <math.h>
-
+#include "FractalCreator.h"
 
 #include <cstdint>
 #include <iostream>
