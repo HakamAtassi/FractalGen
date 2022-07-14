@@ -1,5 +1,18 @@
 # fractalGen
-Generating fractal bitmaps using modern (C++ 11+) and advanced programming principles
+Generate colorful mandelbrot fractals using modern C++ and advanced programming principles. 
 
-#### Build and Run 
-In linux, run ```g++ main.cpp Bitmap.cpp```
+<p align="center">
+  <img width="460" height="300" src="bitmap.bmp">
+</p>
+
+
+
+<br></br>
+
+## Build and Run 
+To build and run, type 
+```
+make run 
+``` 
+and open bitmap.bmp to view the generated fractal.
+
