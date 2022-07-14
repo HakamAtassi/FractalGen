@@ -2,10 +2,12 @@
 Generate colorful mandelbrot fractals using modern C++ and advanced programming principles. 
 
 <p align="center">
-  <img src="img/bitmap.bmp">
+  <img width="800" height="600" src="img/bitmap.bmp">
 </p>
 
-
+<p align="center">
+  <img width="800" height="600" src="img/bitmap_zoomed.bmp">
+</p>
 
 <br></br>
 
