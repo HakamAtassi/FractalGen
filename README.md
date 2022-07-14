@@ -7,9 +7,6 @@ Original             |  Zoomed
 :-------------------------:|:-------------------------:
 ![](img/bitmap.bmp)  |  ![](img/bitmap_zoomed.bmp)
 
-
-
-<br></br>
 ### Build and Run 
 
 To build and run:
