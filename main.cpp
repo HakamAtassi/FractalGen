@@ -29,7 +29,8 @@ int main(){
 	fractalCreator.addRange(1.0, RGB(255, 255, 255));
 
 
-	fractalCreator.addZoom(Zoom(295,202,0.1));
+	//fractalCreator.addZoom(Zoom(295,202,0.1));
+	fractalCreator.addZoom(Zoom(width/2.5,height/2,0.6));
 	//fractalCreator.addZoom(Zoom(312,304,0.1));
 	
 	fractalCreator.run("bitmap.bmp");
