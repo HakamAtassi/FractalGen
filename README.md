@@ -48,7 +48,8 @@ If count, the number of times the formula $z$=$z^2$+$c$ is applied, is 1000, the
 The result of count for each pixel is stored in an array named fractal. The number of pixels for each possible count is stored in an array named histogram. This data is crutial to the coloring of the fractal.
 
 ### Coloring
-Prior to applying color and generating the fractal, a few intermediary steps take place. The first of which splits all possible pixels into a bins of iterations (count). For instance, 300k pixels exceeded a magnitude of 2 between 0-100 iterations, 80k pixels exceeded a magnitude of 2 between 100-300 iterations, and so forth... Next, the program calculates a ratio of the number of pixels for that specific number of iterations to the total number of pixels in that range. This ratio determines how quickly colors transition in the fractal.  
+Prior to applying color and generating the fractal, a few intermediary steps take place. The first of which splits all possible pixels into a bins of iterations (count). For instance, 300k pixels exceeded a magnitude of 2 between 0-100 iterations, 80k pixels exceeded a magnitude of 2 between 100-300 iterations, and so forth...  
+Next, the program calculates a ratio of the number of pixels for that specific number of iterations to the total number of pixels in that range. This ratio determines how quickly colors transition in the fractal.  
 To determine the actual color of a pixel, an arbitrary color is assigned to the start of each range. As the program iterates over every pixel in the fractal, its color is determined by adding its starting color to the ratio multiplied by the change in colors (final color - starting color). The formula looks something like 
 ```
 colorDiff=startColor-endColor;
