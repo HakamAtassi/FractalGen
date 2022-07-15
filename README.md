@@ -21,6 +21,8 @@ and open Fractal.bmp in /src to view the generated fractal.
 <br></br>
 
 ## The Mandelbrot Set
+The Mandelbrot set is the set of (imaginary) numbers whose magnitudes do not exceed some arbitrary bound when recursively squared and added to themselves. 
+This relationship can be represented as $z$=$z^2$+$c$, where $c$ is the inital coordinate. In this case, the maximum bound of |$z$| is 2, and the number of iterations per number is 1000. 
 
 
 ## Algorithms
@@ -34,3 +36,7 @@ blah blah blah
   
 ### Coloring
 blah blah blah
+
+
+## TODO: 
+create the front end using neutralinojs
