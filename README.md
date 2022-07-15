@@ -13,7 +13,7 @@ To build and run:
 ```
 cd 
 git clone https://github.com/HakamAtassi/fractalGen
-cd fractalGen
+cd fractalGen/src
 make run
 ```
 and open bitmap.bmp to view the generated fractal.
