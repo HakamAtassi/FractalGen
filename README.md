@@ -31,12 +31,22 @@ The construction of the Mandelbrot fractal involves 2 main algorithms: the first
   
   
 ### Mapping
-blah blah blah
+The mapping process determines wether the pixel at some specified x,y coordinate falls within the Mandelbrot set. This task is quite simple and is demonstrated in the following pseudo-code:
 
-  
+
+```
+for x in width of image  
+  for y in height of image  
+    count=0
+    z=imaginary(x,y)  
+    c=z
+    while count<1000 and |z|<2  
+      z=z*z+c
+      count++
+```
+&nbsp;&nbsp;&nbsp;&nbsp;If count, the number of times the formula $z$=$z^2$+$c$ is applied, is 1000, the number is considered stable and within the Mandelbrot set. If count is under 1000, then the number exceeded the abitrary bound of 2 and is not considered to be part of the Mandelbrot set.  
+&nbsp;&nbsp;&nbsp;&nbsp;The result of count for each pixel is stored in an array named fractal. The number of pixels for each possible count is stored in an array named histogram. This data is crutial to the coloring of the fractal.
+
 ### Coloring
 blah blah blah
 
-
-## TODO: 
-create the front end using neutralinojs
