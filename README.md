@@ -44,9 +44,9 @@ for x in width of image
       z=z*z+c
       count++
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;If count, the number of times the formula $z$=$z^2$+$c$ is applied, is 1000, the number is considered stable and within the Mandelbrot set. If count is under 1000, then the number exceeded the abitrary bound of 2 and is not considered to be part of the Mandelbrot set.  
-&nbsp;&nbsp;&nbsp;&nbsp;The result of count for each pixel is stored in an array named fractal. The number of pixels for each possible count is stored in an array named histogram. This data is crutial to the coloring of the fractal.
+If count, the number of times the formula $z$=$z^2$+$c$ is applied, is 1000, the number is considered stable and within the Mandelbrot set. If count is under 1000, then the number exceeded the abitrary bound of 2 and is not considered to be part of the Mandelbrot set.  
+The result of count for each pixel is stored in an array named fractal. The number of pixels for each possible count is stored in an array named histogram. This data is crutial to the coloring of the fractal.
 
 ### Coloring
-blah blah blah
+Prior to applying color and generating the fractal, a few intermediary steps take place. The first of which splits all possible pixels into a bins of iterations (count). For instance, 300k pixels exceeded a magnitude of 2 between 0-100 iterations, 80k pixels exceeded a magnitude of 2 between 100-300 iterations, and so forth... Next, the program calculates the number of iterations that took place for the entire set (ie: it sums the number of iterations for each pixel). This allows for a ratio of bin iteratios to total iterations to be calculated. This ratio determines how quickly colors transition in the fractal.
 
