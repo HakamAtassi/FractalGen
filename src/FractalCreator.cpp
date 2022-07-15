@@ -14,7 +14,7 @@ int FractalCreator::run(string fileName){
 	getTotalIterations(); 
 	getRangeTotals(); 
 	drawFractal();
-	writeBitmap("bitmap.bmp");
+	writeBitmap(fileName);
 
 
 	return 1;

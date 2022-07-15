@@ -33,7 +33,7 @@ int main(){
 	//fractalCreator.addZoom(Zoom(width/2.5,height/2,0.6));
 	//fractalCreator.addZoom(Zoom(312,304,0.1));
 	
-	fractalCreator.run("bitmap.bmp");
+	fractalCreator.run("Fractal.bmp");
 
 	//fractalCreator.addZoom(Zoom(width/2,height/2,4.0/width));
 	std::cout<<"Bitmap generated.\n";
