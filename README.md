@@ -20,15 +20,17 @@ and open bitmap.bmp to view the generated fractal.
 
 <br></br>
 
-
+## The Mandelbrot Set
 
 
 ## Algorithms
+The construction of the Mandelbrot fractal involves 2 main algorithms: the first to determine the pixels that fall within the Mandelbrot set, and the second to apply coloring to the pixels that do not fall within the set. 
 
-blah blah blah
-
+  
+  
 ### Mapping
 blah blah blah
 
+  
 ### Coloring
 blah blah blah
