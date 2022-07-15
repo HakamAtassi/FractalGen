@@ -16,7 +16,7 @@ git clone https://github.com/HakamAtassi/fractalGen
 cd fractalGen/src
 make run
 ```
-and open bitmap.bmp to view the generated fractal.
+and open Fractal.bmp in /src to view the generated fractal.
 
 <br></br>
 
