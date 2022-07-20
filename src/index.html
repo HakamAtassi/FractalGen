@@ -1,8 +1,9 @@
 <html>
    <head>
       <!-- Load WebAssembly module -->
-      <script type="text/javascript" src="RGB.js"></script>
-      <script type="text/javascript" src="FractalCreator.js"></script>
+
+      <script type="text/javascript" src="Module.js"></script>
+
 
 
    </head>
@@ -24,40 +25,35 @@
 
             /*
             */
-               createModule().then(({FractalCreator}) => {
+               mainModule().then(({FractalCreator,RGB}) => {
 
-                  createRGB().then(({RGB}) => {
 
-                     /*CREATE fractalCreator */
-
-                     var age=document.getElementById("age_box").value;
-                     //Perform computation
-      
-                     var fractalCreator=new FractalCreator(600,600);
-                     //Write the value of 'root' to the tag whose 'id' is equal to "answer"
-                     document.getElementById("fractal_status").innerHTML = "Fractal Generated";
-      
+                  var age=document.getElementById("age_box").value;
+                  //Perform computation
+   
+                  var fractalCreator=new FractalCreator(600,600);
+                  //Write the value of 'root' to the tag whose 'id' is equal to "answer"
+                  document.getElementById("fractal_status").innerHTML = "Fractal Generated";
+   
 
 
 
-                     var age=document.getElementById("age_box").value;
-                     //Perform computation
-      
-                     var test=new RGB(99,2,3);
-                     const root=test.dumpVars();
-                     //Write the value of 'root' to the tag whose 'id' is equal to "answer"
-                     document.getElementById("RGB_status").innerHTML = root;
-      
-                     var rgb1=new RGB(0,0,255);
-                     var rgb2=new RGB(255, 99, 71);
-                     var rgb3=new RGB(255, 215, 0);
-                     var rgb4=new RGB(255, 255, 255);
+                  var age=document.getElementById("age_box").value;
 
-      
-                     fractalCreator.addRange(0.0,rgb1);
+                  var test=new RGB(99,2,3);
+                  const root=test.dumpVars();
+                  //Write the value of 'root' to the tag whose 'id' is equal to "answer"
+                  document.getElementById("RGB_status").innerHTML = root;
+   
+                  var rgb1=new RGB(0,0,255);
+                  var rgb2=new RGB(255, 99, 71);
+                  var rgb3=new RGB(255, 215, 0);
+                  var rgb4=new RGB(255, 255, 255);
 
-                  });
-
+                  fractalCreator.addRange(0.0,rgb1);
+                  fractalCreator.addRange(0.05,rgb2);
+                  fractalCreator.addRange(0.08,rgb3);
+                  fractalCreator.addRange(1.0,rgb4);
 
                });
             

@@ -2,6 +2,9 @@
 #include "FractalCreator.h"
 #include "RGB.h"
 #include "Zoom.h"
+#include <string>
+
+
 using namespace emscripten;
 
 
@@ -20,11 +23,6 @@ EMSCRIPTEN_BINDINGS(my_fractal) {
 };
 
 
-#include <emscripten/bind.h>
-#include <string>
-#include "RGB.h"
-
-using namespace emscripten;
 
 
 EMSCRIPTEN_BINDINGS(rgb) {
@@ -33,5 +31,13 @@ EMSCRIPTEN_BINDINGS(rgb) {
       .function("dumpVars", &project::RGB::dumpVars)
       ;
       emscripten::function("operator-",&project::operator-);
+
+}
+
+
+EMSCRIPTEN_BINDINGS(zoom) {
+   class_<project::Zoom>("Zoom")
+      .constructor<int,int,double>()
+      ;
 
 }
