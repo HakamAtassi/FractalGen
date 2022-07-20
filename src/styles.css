@@ -1,0 +1,13 @@
+.fractal{
+    position: relative;
+    margin: auto;
+    width: 600px;   
+}
+
+.fractal-wrapper{
+    top: 200px;
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    background-color: red;
+}

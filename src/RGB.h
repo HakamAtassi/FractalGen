@@ -4,22 +4,21 @@
 
 namespace project{
 
-	struct RGB{
+    struct RGB{
 
-		double r{0};
-		double g{0};
-		double b{0};
+            double r;
+            double g;
+            double b;
 
-
-
-		RGB(double r, double g, double b);
-
-
-	};
-
-		RGB operator- (const RGB& RGB1, const RGB& RGB2);
+            RGB();
+            RGB(double r, double g,double b);  
 
 
+            double dumpVars();
+
+    };
+
+    RGB operator- (const RGB& RGB1, const RGB& RGB2);
 }
 
 
